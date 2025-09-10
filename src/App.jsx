@@ -13,6 +13,7 @@ import Contact from "./Page/Contact";
 // Layout
 import Footer from "./Components/Layout/Footer";
 import Header from "./Components/Layout/Header";
+import DetailsPage from "./Page/DetailsPage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/roomlist" element={<RoomList />} />
         <Route path="/booking" element={<BookingInformation />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/book-details" element={<DetailsPage/>}/>
 
         {/* Default / Fallback route */}
         <Route path="*" element={<HomePage />} />
