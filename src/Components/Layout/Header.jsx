@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="fixed left-0 z-50 w-[calc(100%-6rem)] mx-[3rem] px-6 py-4 bg-white bg-opacity-95 shadow-md" style={{ top: "6px" }}>
+    <header className="fixed left-0 z-50 w-[calc(100%-6rem)] mx-[3rem] px-6 py-4 " style={{ top: "6px" }}>
 
       {/* change border color to gray and 3px */}
-      <div className="flex items-center justify-between rounded-full shadow-md px-8 py-3 border-1 border-gray-300" style={{backgroundColor: '#ffffff', paddingInline: '2rem', border: '3px solid #d1d5db'}}>
+      <div className="flex items-center justify-between rounded-full shadow-md px-8 py-3 bg-white/15 backdrop-blur-lg" style={{ paddingInline: '2rem'}}>
 
         {/* Logo */}
         <div className="flex items-center">
