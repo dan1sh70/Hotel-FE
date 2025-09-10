@@ -1,6 +1,26 @@
-import { Heart, MapPin } from "lucide-react";
+import { Heart, MapPin, Star } from "lucide-react";
 
-export default function RoomListCard({ listing, renderStars }) {
+export default function RoomListCard({ listing }) {
+    const renderStars = (rating) => {
+  const stars = [];
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(<Star key={i} className="w-4 h-4 text-red-500 fill-red-500" />);
+  }
+
+  if (hasHalfStar) {
+    stars.push(<Star key="half" className="w-4 h-4 text-red-500 opacity-50 fill-red-500" />);
+  }
+
+  for (let i = stars.length; i < 5; i++) {
+    stars.push(<Star key={i} className="w-4 h-4 text-gray-300" />);
+  }
+
+  return stars;
+};
+
   return (
     <div className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden p-4 flex gap-4 items-start">
       {/* Image */}
@@ -58,6 +78,7 @@ export default function RoomListCard({ listing, renderStars }) {
         <div className="flex justify-between items-end mt-3">
           <div className="flex items-center gap-1 text-sm text-gray-800">
             <span className="font-semibold">{listing.rating}</span>
+            {/* render star icons here */}
             <div className="flex">{renderStars(listing.rating)}</div>
             <span className="text-gray-500">({listing.reviews} Reviews)</span>
           </div>

@@ -1,4 +1,4 @@
-import RoomListCard from '../Components/RoomListCard1'
+import RoomListCard from '../Components/RoomListCard'
 import RoomListHeader from '../Components/RoomListHeader'
 import MapSection from '../Components/MapSection'
 const RoomList = () => {
@@ -104,7 +104,7 @@ const RoomList = () => {
         </div>
 
         {/* Right - Map */}
-        <div className="w-1/2">
+        <div className="w-1/2 h-72">
           <MapSection mapPins={mapPins} />
         </div>
       </div>
