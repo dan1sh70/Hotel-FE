@@ -23,15 +23,15 @@ function App() {
 
       {/* Main routes (page content changes here) */}
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} /> //1
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/confirmation" element={<Confirmation />} />
+        <Route path="/confirmation" element={<Confirmation />} /> //5
         <Route path="/details" element={<RoomDetails />} />
         <Route path="/rooms" element={<Rooms />} />
-        <Route path="/roomlist" element={<RoomList />} />
+        <Route path="/roomlist" element={<RoomList />} />     //2
         <Route path="/booking" element={<BookingInformation />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/book-details" element={<DetailsPage/>}/>
+        <Route path="/room-details" element={<DetailsPage/>}/> //3
 
         {/* Default / Fallback route */}
         <Route path="*" element={<HomePage />} />
