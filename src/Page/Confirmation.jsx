@@ -1,11 +1,12 @@
 import React from 'react'
+import ConfirmationSection from '../Components/ConfirmationSection'
 
-const Conformation = () => {
+const Confirmation = () => {
   return (
     <div>
-      <h1>Conformation</h1>
+      <ConfirmationSection />
     </div>
   )
 }
 
-export default Conformation
+export default Confirmation
