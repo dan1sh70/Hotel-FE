@@ -58,7 +58,7 @@ export default function RoomListCard({ listing }) {
           </div>
 
           {/* Availability & Buttons */}
-          <div className="flex items-center gap-3 mt-3">
+          <div className="flex items-center gap-3 mt-6">
             {listing.available ? (
               <span className="px-3 py-1 text-xs rounded-lg bg-red-100 text-red-600 font-medium">
                 Available

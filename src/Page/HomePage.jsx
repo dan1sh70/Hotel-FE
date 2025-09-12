@@ -9,43 +9,43 @@ const HomePage = () => {
   {
     name: "Mumbai",
     location: "Thane, Mumbai, Maharashtra, India",
-    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5",
+    image: "./mumbai.png",
     span: "col-span-2 row-span-1",
   },
   {
     name: "Goa",
     location: "Vasco da Gama, North Goa, India",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    image: "./Goa.png",
     span: "col-span-1 row-span-1",
   },
   {
     name: "Kerala",
     location: "Ernakulam Kochi, Kerala, South India",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixid=MXwyMDg5NzN8MHwxfGFsbHwxfHx8fHx8fHwxNjE1Mzg5NjU3&ixlib=rb-1.2.1",
+    image: "./kerela.png",
     span: "col-span-1 row-span-1",
   },
   {
     name: "Indore",
     location: "Rajwada Palaces, Indore, India",
-    image: "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33",
+    image: "./indore.png",
     span: "col-span-1 row-span-1",
   },
   {
     name: "Delhi",
     location: "Red Fort (Lal Qila), Delhi, India",
-    image: "https://images.unsplash.com/photo-1548013146-72479768bada",
+    image: "./delhi.png",
     span: "col-span-1 row-span-1",
   },
   {
     name: "Nepal",
     location: "Thamel Street, Kathmandu, Nepal",
-    image: "https://images.unsplash.com/photo-1606112219348-204d7d8b94ee",
+    image: "./nepal.png",
     span: "col-span-1 row-span-1",
   },
   {
     name: "Odisha",
     location: "Janpath, Bhubaneswar, Odisha, India",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    image: "./odisa.png",
     span: "col-span-2 row-span-1",
   },
   
@@ -53,53 +53,65 @@ const HomePage = () => {
 
     const Hotels = [
     {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
+      name : "Sri Ranganadha Nilayam Temple",
+      location : "Srinagar Tiruchirappalli, Tamil Nadu , India",
+      img : "./img1.png",
       price : "2000"
     },
         {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
+      name : "Sri Ranganadha Nilayam Temple",
+      location : "Srinagar Tiruchirappalli, Tamil Nadu , India",
+      img : "./img2.png",
       price : "2000"
     },
         {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
+      name : "Sri Ranganadha Nilayam Temple",
+      location : "Srinagar Tiruchirappalli, Tamil Nadu , India",
+      img : "./img3.png",
       price : "2000"
     },
         {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
+      name : "Sri Ranganadha Nilayam Temple",
+      location : "Srinagar, Tiruchirappalli, Tamil Nadu , India",
+      img : "./img4.png",
       price : "2000"
     },
         {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
+      name : "Sri Ranganadha Nilayam Temple",
+      location : "Madurai, Tamil Nadu , India",
+      img : "./img5.png",
       price : "2000"
     },
         {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
+      name : "Sri Ranganadha Nilayam Temple",
+      location : "Madurai, Tamil Nadu , India",
+      img : "./img6.png",
       price : "2000"
     },
         {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
+      name : "Sri Ranganadha Nilayam Temple",
+      location : "Madurai, Tamil Nadu , India",
+      img : "./img7.png",
       price : "2000"
     },
-       {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
+        {
+      name : "Sri Ranganadha Nilayam Temple",
+      location : "Madurai, Tamil Nadu , India",
+      img : "./img8.png",
       price : "2000"
     },
+    //     {
+    //   name : "Sri Ranganadha Nilayam Temple",
+    //   location : "Srinagar Tiruchirappalli, Tamil Nadu , India",
+    //   img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
+    //   price : "2000"
+    // },
+    //    {
+    //   name : "Sri Ranganadha Nilayam Temple",
+    //   location : "Srinagar Tiruchirappalli, Tamil Nadu , India",
+    //   img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
+    //   price : "2000"
+    // },
 
   ]
 
@@ -118,7 +130,7 @@ const HomePage = () => {
       </button>
     </div>
 
-    <div className="mt-10 grid grid-cols-4 gap-6 px-10 mb-20">
+    <div className="mt-10 grid grid-cols-4 gap-6 px-10 mb-20 margin-right-24px">
   {Hotels.map((hotel, index) => (
     <HomeCards key={index}
           name={hotel.name}

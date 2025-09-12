@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Calendar, MapPin, Users } from "lucide-react";
 
+
 export default function RoomDetailsPage() {
   const [checkIn, setCheckIn] = useState("24 July 2022");
   const [checkOut, setCheckOut] = useState("28 July 2022");
@@ -34,7 +35,7 @@ export default function RoomDetailsPage() {
       "https://source.unsplash.com/600x400/?hotel-room",
       "https://source.unsplash.com/600x400/?bedroom",
       "https://source.unsplash.com/600x400/?balcony",
-      "https://source.unsplash.com/600x400/?bathroom",
+      
     ],
   };
 

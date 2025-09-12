@@ -115,7 +115,7 @@ export default function RoomListCard() {
   return (
     <div className="min-h-screen bg-white text-black">
       {/* Header */}
-      <div className="bg-[#f6d68e] px-6 py-4 border-b border-gray-300">
+      <div className="bg-[#f6d68e] px-6 py-4 border-b border-gray-300 pt-24" >
         <div className="flex justify-between items-center max-w-7xl mx-auto">
           <div>
             <h1 className="text-xl font-bold text-black">

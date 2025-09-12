@@ -14,6 +14,7 @@ import Contact from "./Page/Contact";
 import Footer from "./Components/Layout/Footer";
 import Header from "./Components/Layout/Header";
 import DetailsPage from "./Page/DetailsPage";
+import SingleRoomDetails from "./Components/SingleRoomDetails";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
         <Route path="/" element={<HomePage />} /> //1
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/confirmation" element={<Confirmation />} /> //5
-        <Route path="/details" element={<RoomDetails />} />
+        <Route path="/details" element={<SingleRoomDetails />} />
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/roomlist" element={<RoomList />} />     //2
         <Route path="/booking" element={<BookingInformation />} />

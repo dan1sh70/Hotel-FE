@@ -5,7 +5,7 @@ const TempleBooking = () => {
   return (
     <div className="relative min-h-screen bg-cover bg-center bg-no-repeat" 
          style={{
-           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg')`
+           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./temple.png')`
          }}>
       
       {/* Header */}
