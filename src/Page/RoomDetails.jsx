@@ -31,7 +31,7 @@ export default function RoomDetailsPage() {
       "Flat Screen TV",
     ],
     images: [
-      "https://source.unsplash.com/600x400/?hotel-room",
+      "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg ",
       "https://source.unsplash.com/600x400/?bedroom",
       "https://source.unsplash.com/600x400/?balcony",
       "https://source.unsplash.com/600x400/?bathroom",

@@ -6,62 +6,58 @@ export default function SingleRoomDetails() {
         <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 p-4">
             <div className="max-w-6xl bg-white rounded-lg shadow-sm p-6 mt-20 mx-auto">
                 {/* Header Section */}
-              
-                    <div className="grid grid-cols-4 gap-6 mb-6">
-                        {/* Location */}
-                        <div className="flex items-center space-x-3">
-                            <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                                <MapPin className="w-4 h-4 text-white" />
-                            </div>
-                            <div>
-                                <div className="text-sm text-gray-600">Location</div>
-                                <div className="font-semibold">Amirtha HomeStay</div>
-                                <div className="text-sm text-gray-500">Tiruchirappalli, Tamil Nadu</div>
-                            </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6">
+                    {/* Location */}
+                    <div className="flex items-center space-x-3 mb-4 md:mb-0">
+                        <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                            <MapPin className="w-4 h-4 text-white" />
                         </div>
-
-                        {/* Guests */}
-                        <div className="flex items-center space-x-3">
-                            <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                                <Users className="w-4 h-4 text-white" />
-                            </div>
-                            <div>
-                                <div className="text-sm text-gray-600">Guests</div>
-                                <div className="font-semibold">3 Person</div>
-                                <div className="text-sm text-gray-500">2 Adult, 1 Child</div>
-                            </div>
-                        </div>
-
-                        {/* Check-in */}
-                        <div className="flex items-center space-x-3">
-                            <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                                <Calendar className="w-4 h-4 text-white" />
-                            </div>
-                            <div>
-                                <div className="text-sm text-gray-600">Check-in</div>
-                                <div className="font-semibold">24 July 2022</div>
-                                <div className="text-sm text-blue-500 cursor-pointer">Select date</div>
-                            </div>
-                        </div>
-
-                        {/* Check-out */}
-                        <div className="flex items-center space-x-3">
-                            <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                                <Calendar className="w-4 h-4 text-white" />
-                            </div>
-                            <div>
-                                <div className="text-sm text-gray-600">Check-out</div>
-                                <div className="font-semibold">28 July 2022</div>
-                                <div className="text-sm text-blue-500 cursor-pointer">Select date</div>
-                            </div>
+                        <div>
+                            <div className="text-sm text-gray-600">Location</div>
+                            <div className="font-semibold">Amirtha HomeStay</div>
+                            <div className="text-sm text-gray-500">Tiruchirappalli, Tamil Nadu</div>
                         </div>
                     </div>
+                    {/* Guests */}
+                    <div className="flex items-center space-x-3 mb-4 md:mb-0">
+                        <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                            <Users className="w-4 h-4 text-white" />
+                        </div>
+                        <div>
+                            <div className="text-sm text-gray-600">Guests</div>
+                            <div className="font-semibold">3 Person</div>
+                            <div className="text-sm text-gray-500">2 Adult, 1 Child</div>
+                        </div>
+                    </div>
+                    {/* Check-in */}
+                    <div className="flex items-center space-x-3 mb-4 md:mb-0">
+                        <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                            <Calendar className="w-4 h-4 text-white" />
+                        </div>
+                        <div>
+                            <div className="text-sm text-gray-600">Check-in</div>
+                            <div className="font-semibold">24 July 2022</div>
+                            <div className="text-sm text-blue-500 cursor-pointer">Select date</div>
+                        </div>
+                    </div>
+                    {/* Check-out */}
+                    <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                            <Calendar className="w-4 h-4 text-white" />
+                        </div>
+                        <div>
+                            <div className="text-sm text-gray-600">Check-out</div>
+                            <div className="font-semibold">28 July 2022</div>
+                            <div className="text-sm text-blue-500 cursor-pointer">Select date</div>
+                        </div>
+                    </div>
+                </div>
                 
 
                 {/* Main Content */}
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Left Section - Property Details */}
-                    <div className="col-span-2">
+                    <div className="md:col-span-2">
                             {/* Header */}
                             <div className="p-6">
                                 <h1 className="text-3xl font-bold text-red-500 mb-2">Amirtha HomeStay</h1>
@@ -72,7 +68,7 @@ export default function SingleRoomDetails() {
                             </div>
 
                             {/* Image Gallery */}
-                            <div className="grid grid-cols-2 gap-2 p-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 p-2 sm:p-6">
                                 {/* Main Image */}
                                 <div className="relative">
                                     <img
@@ -83,7 +79,7 @@ export default function SingleRoomDetails() {
                                 </div>
 
                                 {/* Side Images */}
-                                <div className="space-y-2">
+                                <div className="space-y-2 mt-2 sm:mt-0">
                                     <div className="relative">
                                         <img
                                             src="./3rdpg2.png"
@@ -112,7 +108,7 @@ export default function SingleRoomDetails() {
                             {/* Amenities */}
                             
                             
-                            <div className="px-6 pb-12">
+                            <div className="px-2 sm:px-6 pb-12">
                                 <div className="flex flex-wrap gap-2 text-sm text-gray-600 mb-4">
                                     <span>WiFi</span> • <span>Air conditioning</span> • <span>Heating</span> •
                                     <span>CCTV</span> • <span>Parking</span> • <span>House Keeping</span> • <span>Animal</span>
@@ -141,8 +137,8 @@ export default function SingleRoomDetails() {
                     </div>
 
                     {/* Right Section - Booking Card */}
-                    <div className="col-span-1">
-                        <div className="bg-white rounded-lg shadow-sm p-6 sticky top-4">
+                    <div className="md:col-span-1 mt-8 md:mt-0">
+                        <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 md:sticky md:top-4">
                             <h2 className="text-xl font-semibold mb-4">
                                 Deluxe Room Available Just 2.5 km from Vishwanath Temple
                             </h2>

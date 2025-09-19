@@ -15,7 +15,7 @@ export default function BookingReceipt() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen bg-gray-100 p-4 pt-20">
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
         {/* Header */}
         <div className="bg-white p-6 border-b border-pink-200 flex justify-between items-center">
@@ -99,7 +99,7 @@ export default function BookingReceipt() {
 
         {/* Booking Details */}
         <div className="p-6 " style={{border:'1px solid pink'}}>
-          <div className="grid grid-cols-4 gap-6">
+          <div className="sm:grid sm:grid-cols-4 flex flex-col gap-6">
             {/* Guests */}
             <div>
               <div className="flex items-center mb-2">

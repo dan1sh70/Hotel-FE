@@ -92,7 +92,7 @@ const RoomList = () => {
     },
   ];
   return (
-    <div className="min-h-screen bg-[#fff9eb]">
+    <div className="min-h-screen pt-10 bg-[#fff9eb]">
       
       <RoomListHeader />
       <div className="flex max-w-7xl mx-auto mt-6 gap-6">

@@ -12,7 +12,7 @@ function HomeCards({name, location, img}) {
             className="w-full h-full object-cover"
           />
     
-          <div className="absolute bottom-0 left-0 w-full bg-white/15 backdrop-blur-xl px-4 py-2">
+          <div className="absolute bottom-0 left-0 w-full bg-yellow-400/25 backdrop-blur-md px-4 py-2">
             <div className="flex justify-center mb-2">
               <div className="w-12 h-1 bg-white/70 rounded-full"></div>
             </div>

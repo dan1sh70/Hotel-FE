@@ -14,6 +14,7 @@ import Contact from "./Page/Contact";
 import Footer from "./Components/Layout/Footer";
 import Header from "./Components/Layout/Header";
 import DetailsPage from "./Page/DetailsPage";
+import SingleRoomDetails from "./Components/SingleRoomDetails";
 
 function App() {
   return (
@@ -23,15 +24,15 @@ function App() {
 
       {/* Main routes (page content changes here) */}
       <Routes>
-        <Route path="/" element={<HomePage />} /> //1
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/confirmation" element={<Confirmation />} /> //5
-        <Route path="/details" element={<RoomDetails />} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/roomlist" element={<RoomList />} />     //2
+        <Route path="/" element={<HomePage />} /> //yes res
+         <Route path="/about-us" element={<AboutUs />} />  //yes res
+        <Route path="/confirmation" element={<Confirmation />} /> //yes res
+        <Route path="/details" element={<SingleRoomDetails />} /> //yes res
+        <Route path="/rooms" element={<Rooms />} /> //yes res
+        <Route path="/roomlist" element={<RoomList />} />     //yes
         <Route path="/booking" element={<BookingInformation />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/room-details" element={<DetailsPage/>}/> //3
+        <Route path="/contact" element={<Contact />} /> //yes res
+        <Route path="/room-details" element={<DetailsPage/>}/> //yes
 
         {/* Default / Fallback route */}
         <Route path="*" element={<HomePage />} />

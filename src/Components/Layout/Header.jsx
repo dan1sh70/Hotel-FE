@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="fixed left-0 z-50 w-[calc(100%-6rem)] mx-[3rem] px-6 py-4 " style={{ top: "6px" }}>
+    <header className="fixed left-0 z-50 w-[calc(100%-6rem)] mx-[3rem] py-2 px-2 rounded-full bg-white/5 backdrop-blur-md" style={{ top: "6px" }}>
 
       {/* change border color to gray and 3px */}
-      <div className="flex items-center justify-between rounded-full shadow-md px-8 py-3 bg-white/15 backdrop-blur-lg" style={{ paddingInline: '2rem'}}>
+      <div className="flex items-center justify-between rounded-full shadow-md px-8 py-3 bg-white backdrop-blur-lg" style={{ paddingInline: '2rem'}}>
 
         {/* Logo */}
         <div className="flex items-center">
@@ -18,21 +19,21 @@ export default function Header() {
 
         {/* Nav Links */}
         <nav className="flex items-center space-x-8">
-          <a href="#" className="text-sm font-semibold text-black hover:text-red-600" style={{color: "red", paddingRight: '20px' }} >
+          <Link to={"/"} className="text-sm font-semibold text-black hover:text-red-600" style={{color: "red", paddingRight: '20px' }} >
             Home
-          </a>
-          <a href="#" className="text-sm font-semibold text-red-600 hover:text-black" style={{color: "red", paddingRight: '20px' }}>
+          </Link>
+          <Link to={"/about-us"} className="text-sm font-semibold text-red-600 hover:text-black" style={{color: "red", paddingRight: '20px' }}>
             About Us
-          </a>
-          <a href="#" className="text-sm font-semibold text-red-600 hover:text-black" style={{ color: "red", paddingRight: '20px' }}>
+          </Link>
+          <Link to={"/rooms"} className="text-sm font-semibold text-red-600 hover:text-black" style={{ color: "red", paddingRight: '20px' }}>
             Rooms
-          </a>
-          <a href="#" className="text-sm font-semibold text-red-600 hover:text-black" style={{color: "red", paddingRight: '20px' }}>
+          </Link>
+          <Link to={"/contact"} className="text-sm font-semibold text-red-600 hover:text-black" style={{color: "red", paddingRight: '20px' }}>
             Contact
-          </a>
-          <a href="#" className="text-sm font-semibold text-red-600 hover:text-black" style={{color: "red", paddingRight: '20px' }} >
+          </Link>
+          <Link to={"/"} className="text-sm font-semibold text-red-600 hover:text-black" style={{color: "red", paddingRight: '20px' }} >
             Dashboard
-          </a>
+          </Link>
         </nav>
 
         {/* Login Button */}
