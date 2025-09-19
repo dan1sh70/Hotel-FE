@@ -3,7 +3,6 @@ import { MapPin, Users, Calendar, ChevronDown } from 'lucide-react';
 
 const TempleBooking = () => {
   return (
-<<<<<<< HEAD
     <div
       className="relative min-h-screen bg-cover bg-center bg-no-repeat"
       style={{
@@ -11,13 +10,6 @@ const TempleBooking = () => {
           "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('landing-bg.png')",
       }}
     >
-=======
-    <div className="relative min-h-screen bg-cover bg-center bg-no-repeat" 
-         style={{
-           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./temple.png')`
-         }}>
-      
->>>>>>> 55cdd9dedfbfe59e9fa9684571205fee11f4a8f0
       {/* Header */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6">
         {/* Main Title */}

@@ -85,56 +85,9 @@ export default function RoomListCard({ listing }) {
         <span className="text-gray-500">({listing.reviews} Reviews)</span>
       </div>
 
-<<<<<<< HEAD
       <div className="text-right">
         <div className="text-lg font-bold text-black">
           ₹{listing.price.toLocaleString()}
-=======
-          {/* Amenities */}
-          <div className="text-sm text-gray-700 mt-2 flex flex-wrap gap-2">
-            {listing.amenities.map((amenity, idx) => (
-              <span key={idx} className="flex items-center">
-                {amenity}
-                {idx < listing.amenities.length - 1 && (
-                  <span className="mx-1 text-gray-400">•</span>
-                )}
-              </span>
-            ))}
-          </div>
-
-          {/* Availability & Buttons */}
-          <div className="flex items-center gap-3 mt-6">
-            {listing.available ? (
-              <span className="px-3 py-1 text-xs rounded-lg bg-red-100 text-red-600 font-medium">
-                Available
-              </span>
-            ) : (
-              <span className="px-3 py-1 text-xs rounded-lg bg-gray-200 text-gray-600 font-medium">
-                Sold Out
-              </span>
-            )}
-            <button className="px-4 py-1 text-xs rounded-lg bg-green-100 text-green-700 border border-green-300">
-              View Details
-            </button>
-          </div>
-        </div>
-
-        {/* Rating + Price */}
-        <div className="flex justify-between items-end mt-3">
-          <div className="flex items-center gap-1 text-sm text-gray-800">
-            <span className="font-semibold">{listing.rating}</span>
-            {/* render star icons here */}
-            <div className="flex">{renderStars(listing.rating)}</div>
-            <span className="text-gray-500">({listing.reviews} Reviews)</span>
-          </div>
-
-          <div className="text-right">
-            <div className="text-lg font-bold text-black">
-              ₹{listing.price.toLocaleString()}
-            </div>
-            <div className="text-xs text-gray-600">Onwards</div>
-          </div>
->>>>>>> 55cdd9dedfbfe59e9fa9684571205fee11f4a8f0
         </div>
         <div className="text-xs text-gray-600">Onwards</div>
       </div>
