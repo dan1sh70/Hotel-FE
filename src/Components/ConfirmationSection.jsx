@@ -15,8 +15,8 @@ export default function BookingReceipt() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4 pt-20">
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+    <div className="min-h-screen bg-white p-4 pt-20">
+      <div className="max-w-4xl mx-auto bg-[#fef4cc] rounded-2xl shadow-lg overflow-hidden">
         {/* Header */}
         <div className="bg-white p-6 border-b border-pink-200 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-red-500">Thanks For Staying With Us!</h1>

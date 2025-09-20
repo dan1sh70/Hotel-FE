@@ -4,7 +4,7 @@ import { MapPin, Users, Calendar, ChevronDown } from 'lucide-react';
 const TempleBooking = () => {
   return (
     <div
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat pt-16 sm:pt-0"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('landing-bg.png')",

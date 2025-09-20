@@ -7,51 +7,6 @@ import Testimonials from '../Components/Testimonials';
 
 const HomePage = () => {
 
-  const places = [
-  {
-    name: "Mumbai",
-    location: "Thane, Mumbai, Maharashtra, India",
-    image: "./mumbai.png",
-    span: "col-span-2 row-span-1",
-  },
-  {
-    name: "Goa",
-    location: "Vasco da Gama, North Goa, India",
-    image: "./Goa.png",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    name: "Kerala",
-    location: "Ernakulam Kochi, Kerala, South India",
-    image: "./kerela.png",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    name: "Indore",
-    location: "Rajwada Palaces, Indore, India",
-    image: "./indore.png",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    name: "Delhi",
-    location: "Red Fort (Lal Qila), Delhi, India",
-    image: "./delhi.png",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    name: "Nepal",
-    location: "Thamel Street, Kathmandu, Nepal",
-    image: "./nepal.png",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    name: "Odisha",
-    location: "Janpath, Bhubaneswar, Odisha, India",
-    image: "./odisa.png",
-    span: "col-span-2 row-span-1",
-  },
-  
-];
 
     const Hotels = [
     {
@@ -77,31 +32,7 @@ const HomePage = () => {
       location : "Srinagar, Tiruchirappalli, Tamil Nadu , India",
       img : "./img4.png",
       price : "2000"
-    },
-        {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
-      price : "2000"
-    },
-        {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
-      price : "2000"
-    },
-        {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
-      price : "2000"
-    },
-       {
-      name : "Hotel 1",
-      location : "Srinagar",
-      img : "https://www.hotelbuddhakathmandu.com/public/images/upload/homeslider/slider1.jpg",
-      price : "2000"
-    },
+    }
 
   ]
 
@@ -120,7 +51,7 @@ return (
         </button>
       </div>
 
-    <div className="mt-10 grid grid-cols-4 gap-6 px-10 mb-20">
+    <div className="mt-10 grid md:grid-cols-4 grid-cols-1 gap-6 sm:px-10 px-7 mb-20">
   {Hotels.map((hotel, index) => (
     <HomeCards key={index}
           name={hotel.name}
@@ -145,30 +76,8 @@ return (
         </button>
       </div>
 
-      {/* Places grid */}
-      <div className="mt-10 px-4 sm:px-6 md:px-10 mb-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[250px]">
-          {places.map((place, index) => (
-            <div
-              key={index}
-              className={`relative rounded-xl overflow-hidden shadow-lg ${place.span}`}
-            >
-              <img
-                src={place.image}
-                alt={place.name}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex flex-col justify-end p-4">
-                <h2 className="text-white text-lg sm:text-xl font-bold">
-                  {place.name}
-                </h2>
-                <p className="flex items-center gap-2 text-gray-200 text-sm">
-                  <FaLocationDot /> {place.location}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className='mt-10 px-4 sm:px-6 md:px-10'>
+        <img src="home-wrapper.png" alt="" className='object-cover w-full rounded-2xl ' />
       </div>
 
       {/* Existing sections */}

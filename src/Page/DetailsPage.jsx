@@ -6,13 +6,13 @@ import RegistrationDetails from "../Components/RegistrationDetails";
 
 function DetailsPage() {
   return (
-    <div className="p-10 mt-28 space-y-10">
+    <div className="p-4 sm:p-8 md:p-10 mt-28 space-y-8 sm:space-y-10">
       {/* Hotel + Booking Info Section */}
-      <div className="grid grid-cols-3 gap-8 bg-gray-50 p-6 rounded-lg">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 bg-[#FEF4CC] p-3 sm:p-6 rounded-lg">
         {/* Left Section */}
-        <div className="col-span-2 space-y-6">
+  <div className="md:col-span-2 space-y-4 sm:space-y-6">
           {/* Guests / Check-in / Check-out */}
-          <div className="bg-white shadow-md rounded-lg p-6 grid grid-cols-3 gap-4 text-center">
+          <div className="bg-[#FEF4CC] shadow-md rounded-lg p-3 sm:p-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-center">
             {/* Guests */}
             <div>
               <div className="flex justify-center items-center gap-2 mb-2">
@@ -45,7 +45,7 @@ function DetailsPage() {
           </div>
 
           {/* Hotel Info */}
-          <div className="bg-white shadow-md rounded-lg p-6">
+          <div className="bg-[#FEF4CC] shadow-md rounded-lg p-6">
             <h1 className="text-2xl font-bold text-red-600">Amirtha HomeStay</h1>
             <p className="text-gray-600 text-sm">
               📍 Srirangam, Tiruchirappalli, Tamil Nadu, India
@@ -54,7 +54,7 @@ function DetailsPage() {
           </div>
 
           {/* Amenities */}
-          <div className="bg-white shadow-md rounded-lg p-6">
+          <div className="bg-[#FEF4CC] shadow-md rounded-lg p-6">
             <h2 className="text-lg font-semibold">Amenities</h2>
             <p className="text-gray-600">
               Wifi • Air conditioning • Heating • CCTV • Parking • House Keeping • Animal friendly
@@ -62,7 +62,7 @@ function DetailsPage() {
           </div>
 
           {/* Room Info */}
-          <div className="bg-white shadow-md rounded-lg p-6">
+          <div className="bg-[#FEF4CC] shadow-md rounded-lg p-6">
             <h2 className="text-lg font-semibold">Deluxe Room Available</h2>
             <ul className="list-disc list-inside text-gray-600 mt-2">
               <li>Book with ₹0 Payment</li>
@@ -74,7 +74,7 @@ function DetailsPage() {
           </div>
 
           {/* Important Info */}
-          <div className="bg-white shadow-md rounded-lg p-6">
+          <div className="bg-[#FEF4CC] shadow-md rounded-lg p-6">
             <h2 className="text-lg font-semibold mb-2">Important Information</h2>
             <ul className="list-disc list-inside text-gray-600 text-sm space-y-1">
               <li>Applicable only for bookings up to 5 rooms.</li>
@@ -86,8 +86,8 @@ function DetailsPage() {
         </div>
 
         {/* Right Section - Booking Info */}
-        <div className="col-span-1">
-          <div className="bg-white shadow-md rounded-lg p-6 space-y-4">
+  <div className="md:col-span-1 mt-6 md:mt-0">
+          <div className="bg-white shadow-md rounded-lg p-3 sm:p-6 space-y-3 sm:space-y-4">
             <h2 className="text-xl font-bold mb-4">Booking Information</h2>
             <div className="flex justify-between text-gray-700">
               <span>1 Room × 5D / 4N</span>

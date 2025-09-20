@@ -5,7 +5,7 @@ function GuestDetails() {
     <div className="bg-gray-50 shadow-md rounded-lg p-8">
         <h2 className="text-2xl font-bold text-red-600 mb-6">Guest Details</h2>
 
-        <div className="grid grid-cols-2 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* First Name */}
           <div>
             <label className="block text-lg text-black mb-2">First Name*</label>

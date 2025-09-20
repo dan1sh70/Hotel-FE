@@ -1,6 +1,9 @@
 import RoomListCard from '../Components/RoomListCard'
 import RoomListHeader from '../Components/RoomListHeader'
 import MapSection from '../Components/MapSection'
+import SidebarFilters from '../Components/RoomFilter';
+import Testimonials from '../Components/Testimonials';
+import RoomListNav from '../Components/RoomListNav';
 const RoomList = () => {
   const mapPins = [
     { id: '1526', x: '15%', y: '25%' },
@@ -92,22 +95,32 @@ const RoomList = () => {
     },
   ];
   return (
-    <div className="min-h-screen pt-10 bg-[#fff9eb]">
-      
-      <RoomListHeader />
-      <div className="flex max-w-7xl mx-auto mt-6 gap-6">
+    <div className="min-h-screen pt-10 bg-white">
+  
+  <RoomListNav/>
+      <div className="sm:flex sm:flex-row flex flex-col max-w-6xl mx-auto mt-6 gap-6">
+        {/* Right - Map */}
+        <div>
+
+        <div className="w-full h-72">
+          <MapSection mapPins={mapPins} />
+        </div>
+
+        <div className='w-full'>
+        <SidebarFilters/>
+        </div >
+        </div>
+
         {/* Left - Cards */}
-        <div className="w-1/2 flex flex-col gap-6">
+        <div className="sm:w-2/3 w-full flex flex-col gap-6">
           {listings.map((listing) => (
             <RoomListCard key={listing.id} listing={listing} renderStars={listing.rating} />
           ))}
         </div>
 
-        {/* Right - Map */}
-        <div className="w-1/2 h-72">
-          <MapSection mapPins={mapPins} />
-        </div>
       </div>
+
+      <Testimonials/>
     </div>
 
   )
