@@ -127,9 +127,7 @@ function RegistrationDetails() {
 
 
       {/* Button */}
-      <button className="bg-red-600 text-white font-semibold px-6 py-3 rounded-lg mt-4">
-        PAY NOW
-      </button>
+      
     </div>
   );
 }

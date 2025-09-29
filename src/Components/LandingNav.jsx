@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Search, ChevronDown, Calendar } from 'lucide-react';
 import { useGlobalStore } from '../stores/useGlobalStore';
+import { Link } from 'react-router-dom';
 
-const RoomListNav = ({ onChange }) => {
+const LandingNav = () => {
   const [city, setCity] = useState('');
   // const [adults, setAdults] = useState('');
   const {adults,setAdults,children,setChildren} = useGlobalStore();
   // const [children, setChildren] = useState('');
 
 
- useEffect(() => {
-    onChange?.({ city, adults, children });
-  }, [city, adults, children]);
+//  useEffect(() => {
+//     onChange?.({ city, adults, children });
+//   }, [city, adults, children]);
 
   return (
     <div className="mt-16 mx-auto flex justify-center py-2 px-2 rounded-full sm:bg-[#fcc900]/20 max-w-4xl w-full">
@@ -68,12 +69,14 @@ const RoomListNav = ({ onChange }) => {
           <span className="text-gray-700 text-sm font-medium">Check Availability</span>
         </div>
 
+<Link to={"/rooms"}> 
         <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full font-semibold transition-colors text-sm ml-0 sm:ml-2 mt-2 sm:mt-0">
           BOOK NOW
         </button>
+</Link>
       </div>
     </div>
   );
 };
 
-export default RoomListNav;
+export default LandingNav;

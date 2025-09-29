@@ -1,7 +1,11 @@
+
 import React from 'react'
 import HotelCard from '../Components/HotelCard'
 
 const Rooms = () => {
+
+ 
+
   const Hotels = [
     {
       name : "Hotel 1",
@@ -54,6 +58,7 @@ const Rooms = () => {
 
   ]
   return (
+    
 <>
   <div className="mt-28">
     {/* Hero Image & Heading */}

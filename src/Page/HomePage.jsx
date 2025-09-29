@@ -1,11 +1,18 @@
-import React from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from 'react'
 import TempleBooking from '../Components/TempleBooking'
 import HomeCards from '../Components/HomeCards'
 import { FaLocationDot } from 'react-icons/fa6';
 import Faq from '../Components/Faq';
 import Testimonials from '../Components/Testimonials';
+import { useHotelStore } from '../stores/useHotelStore';
 
 const HomePage = () => {
+  const {getRandom,randomHotels} = useHotelStore();
+
+  useEffect(() => {
+    getRandom();
+  },[])
 
 
     const Hotels = [
@@ -52,11 +59,11 @@ return (
       </div>
 
     <div className="mt-10 grid md:grid-cols-4 grid-cols-1 gap-6 sm:px-10 px-7 mb-20">
-  {Hotels.map((hotel, index) => (
-    <HomeCards key={index}
+  {randomHotels.map((hotel) => (
+    <HomeCards key={hotel._id}
           name={hotel.name}
-          location={hotel.location}
-          img={hotel.img} />
+          location={hotel.location.city}
+          img= "/room1.png"/>
   ))}
 </div>
 
