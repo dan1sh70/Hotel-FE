@@ -6,6 +6,7 @@ import SidebarFilters from '../Components/RoomFilter';
 import Testimonials from '../Components/Testimonials';
 import RoomListNav from '../Components/RoomListNav';
 import { useHotelStore } from '../stores/useHotelStore';
+// import dayjs from 'dayjs';
 
 const RoomList = () => {
   const { getRooms, rooms } = useHotelStore();
@@ -17,6 +18,8 @@ const RoomList = () => {
     children: '',
     type: [],
     amenities: [],
+    startDate: '',
+    endDate: ''
   });
 
   // Fetch rooms whenever filters change
@@ -26,7 +29,7 @@ const RoomList = () => {
 
   const handleNavChange = (navFilters) => {
     setFilters((prev) => ({ ...prev, ...navFilters }));
-  };
+  }; 
 
   const handleSidebarChange = (sidebarFilters) => {
     setFilters((prev) => ({ ...prev, ...sidebarFilters }));
@@ -46,6 +49,38 @@ const RoomList = () => {
   return (
     <div className="min-h-screen pt-10 bg-white">
       <RoomListNav onChange={handleNavChange} />
+      
+      {/* Show selected date range if available */}
+      {filters.startDate && filters.endDate && (
+        <div className="max-w-6xl mx-auto mt-4 px-3">
+          <div className="bg-red-50 border border-red-200 rounded-lg p-3 flex items-center justify-between">
+            <div>
+              <span className="text-sm font-medium text-gray-700">
+                Showing available rooms from{' '}
+                <span className="text-red-600">
+                  {new Date(filters.startDate).toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
+                  })}
+                </span>
+                {' to '}
+                <span className="text-red-600">
+                  {new Date(filters.endDate).toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
+                  })}
+                </span>
+              </span>
+              <span className="text-xs text-gray-500 ml-2">
+                ({Math.ceil((new Date(filters.endDate) - new Date(filters.startDate)) / (1000 * 60 * 60 * 24))} nights)
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="sm:flex sm:flex-row flex flex-col max-w-6xl mx-auto mt-6 gap-6">
         {/* Right - Map + Filters */}
         <div>
@@ -59,9 +94,20 @@ const RoomList = () => {
 
         {/* Left - Cards */}
         <div className="sm:w-2/3 w-full flex flex-col gap-6">
-          {rooms.map((listing) => (
-            <RoomListCard key={listing._id} listing={listing} />
-          ))}
+          {rooms.length > 0 ? (
+            rooms.map((listing) => (
+              <RoomListCard key={listing._id} listing={listing} />
+            ))
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg">
+                No rooms available for the selected dates and filters.
+              </p>
+              <p className="text-gray-400 text-sm mt-2">
+                Try adjusting your search criteria.
+              </p>
+            </div>
+          )}
         </div>
       </div>
       <Testimonials />
@@ -70,4 +116,3 @@ const RoomList = () => {
 };
 
 export default RoomList;
-

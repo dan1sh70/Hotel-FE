@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Download, MapPin, Users, Calendar, Star } from 'lucide-react';
+import { useParams } from 'react-router-dom';
+import { useBookingStore } from '../stores/useBookingStore';
 
 export default function BookingReceipt() {
+  const {bookingId} = useParams();
+  const {getConfirmation,confirmedBooking} = useBookingStore();
+
+  useEffect(() => {
+    getConfirmation(bookingId);
+  },[bookingId,getConfirmation])
+
+
   const StarRating = ({ rating, reviews }) => (
     <div className="flex items-center">
       <span className="text-lg font-semibold mr-2">{rating}</span>
@@ -31,10 +41,10 @@ export default function BookingReceipt() {
           <div className="flex justify-between items-start">
             <div>
               <div className="text-red-500 font-semibold mb-1">Booking Id</div>
-              <div className="text-xl font-bold">SNI92M85BHGG</div>
+              <div className="text-xl font-bold">{confirmedBooking?._id}</div>
             </div>
             <div className="text-right text-sm text-gray-600">
-              <div>Booked by Anjali Gupta on Fri, 18 July 2024</div>
+              <div>Booked by {confirmedBooking?.guestDetails?.firstName} {confirmedBooking?.guestDetails?.lastName} on {confirmedBooking?.createdAt}</div>
             </div>
           </div>
         </div>
@@ -43,23 +53,24 @@ export default function BookingReceipt() {
         <div className="p-6 border-b border-pink-200">
           <div className="flex justify-between">
             <div className="flex-1 pr-6" style={{width: '55%'}}>
-              <h2 className="text-2xl font-bold text-red-500 mb-2">Amirtha HomeStay</h2>
+              <h2 className="text-2xl font-bold text-red-500 mb-2">{confirmedBooking?.hotelId?.name}</h2>
               <div className="flex items-center text-gray-600 mb-3">
                 <MapPin className="w-4 h-4 mr-1" />
-                <span>Srirangam, Tiruchirappalli, Tamil Nadu, India</span>
+                <span>{confirmedBooking?.hotelId?.location?.city}</span>
               </div>
               
               <div className="text-sm text-gray-600 mb-3">
-                Wifi • Air conditioning • Heating • CCTV • Parking • House Keeping • Animal Friendly
+                <ul className="list-disc list-inside text-gray-600 text-sm space-y-1 space-x-1">
+               {confirmedBooking?.hotelId?.amenities?.map((amen,idx) => (
+                <li key={idx}>{amen}</li>
+              ))}
+           </ul>
               </div>
               
-              <StarRating rating="4.0" reviews="367" />
+              <StarRating rating={confirmedBooking?.hotelId?.rating?.average} reviews={confirmedBooking?.hotelId?.rating?.totalReviews} />
               
               <p className="text-gray-600 text-sm mt-3 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                commodo consequat.
+                {confirmedBooking?.hotelId?.description}
               </p>
             </div>
             
@@ -68,7 +79,7 @@ export default function BookingReceipt() {
               {/* Main Image */}
               <div className="relative">
                 <img
-                  src="./3rdpg1.png"
+                  src="/3rdpg1.png"
                   alt="City view from property"
                   className="w-full h-40 object-cover rounded-lg"
                 />
@@ -78,14 +89,14 @@ export default function BookingReceipt() {
               <div className="space-y-2">
                 <div className="relative">
                   <img
-                    src="./3rdpg2.png"
+                    src="/3rdpg2.png"
                     alt="Interior room"
                     className="w-full h-19 object-cover rounded-lg"
                   />
                 </div>
                 <div className="relative">
                   <img
-                    src="./3rdpg3.png"
+                    src="/3rdpg3.png"
                     alt="Property exterior"
                     className="w-full h-19 object-cover rounded-lg"
                   />
@@ -108,12 +119,7 @@ export default function BookingReceipt() {
                 </div>
                 <div className="font-semibold">Guests</div>
               </div>
-              <div className="text-sm text-gray-600 ml-11">3 Person</div>
-              <div className="text-sm text-gray-500 ml-11">
-                <div>• Anjali Gupta</div>
-                <div>• raj Gupta</div>
-                <div>• Shan Gupta</div>
-              </div>
+              <div className="text-sm text-gray-600 ml-11">{confirmedBooking?.guests?.adults}  {confirmedBooking?.guests?.children}</div>
             </div>
 
             {/* Check-in */}
@@ -124,7 +130,7 @@ export default function BookingReceipt() {
                 </div>
                 <div className="font-semibold">Check-In</div>
               </div>
-              <div className="text-lg font-semibold ml-11">24 July 2024</div>
+              <div className="text-lg font-semibold ml-11">{confirmedBooking?.dates?.checkIn}</div>
               <div className="text-sm text-gray-500 ml-11">12:00 AM</div>
             </div>
 
@@ -136,7 +142,7 @@ export default function BookingReceipt() {
                 </div>
                 <div className="font-semibold">Check-Out</div>
               </div>
-              <div className="text-lg font-semibold ml-11">28 July 2024</div>
+              <div className="text-lg font-semibold ml-11">{confirmedBooking?.dates?.checkOut}</div>
               <div className="text-sm text-gray-500 ml-11">11:00 AM</div>
             </div>
 
@@ -156,11 +162,11 @@ export default function BookingReceipt() {
           <div className="space-y-3">
             <div className="flex justify-between">
               <span className="text-gray-600">1 Room x 5D / 4 N</span>
-              <span className="font-semibold">₹15000</span>
+              <span className="font-semibold">₹{confirmedBooking?.pricing?.basePrice}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">Hotel Taxes</span>
-              <span className="font-semibold">₹3,240</span>
+              <span className="font-semibold">₹{confirmedBooking?.pricing?.taxAmount}</span>
             </div>
           </div>
         </div>
@@ -170,8 +176,8 @@ export default function BookingReceipt() {
           <div className="flex justify-between items-center">
             <span className="text-xl font-bold">Total Amount</span>
             <div className="text-right">
-              <div className="text-2xl font-bold text-red-500">₹18,240</div>
-              <div className="text-sm text-gray-600">(Paid)</div>
+              <div className="text-2xl font-bold text-red-500">₹{confirmedBooking?.pricing?.totalAmount}</div>
+              <div className="text-sm text-gray-600">({confirmedBooking?.status})</div>
             </div>
           </div>
         </div>

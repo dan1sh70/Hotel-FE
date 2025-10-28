@@ -15,6 +15,7 @@ import Footer from "./Components/Layout/Footer";
 import Header from "./Components/Layout/Header";
 import DetailsPage from "./Page/DetailsPage";
 import SingleRoomDetails from "./Components/SingleRoomDetails";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} /> //yes res up
          <Route path="/about-us" element={<AboutUs />} />  //yes res up
-        <Route path="/confirmation" element={<Confirmation />} /> //yes res up
+        <Route path="/confirmation/:bookingId" element={<Confirmation />} /> //yes res up
         <Route path="/details/:roomId" element={<SingleRoomDetails />} /> //yes res up
         <Route path="/roomlist" element={<Rooms />} /> //yes res up
         <Route path="/rooms" element={<RoomList />} />     //yes res up
@@ -37,6 +38,7 @@ function App() {
         {/* Default / Fallback route */}
         <Route path="*" element={<HomePage />} />
       </Routes>
+      <Toaster position="top-center" reverseOrder={false} />
 
       {/* Footer should be visible on all pages */}
       <Footer />

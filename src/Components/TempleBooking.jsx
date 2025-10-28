@@ -12,10 +12,10 @@ const TempleBooking = () => {
       }}
     >
       {/* Header */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 mt-10 sm:mt-0">
         {/* Main Title */}
-        <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
+        <div className="text-center ">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight">
             FlashRooms Available Near
             <br className="hidden md:block" />
             All Major Temples
@@ -29,7 +29,7 @@ const TempleBooking = () => {
 <LandingNav/>
 
         {/* Trending Searches */}
-        <div className="mt-8 text-center">
+        <div className="mt-4 sm:mb-0 mb-4 text-center">
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <span className="text-white font-medium whitespace-nowrap">
               Trending Searches -
