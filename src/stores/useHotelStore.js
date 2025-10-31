@@ -3,7 +3,7 @@ import axios from "axios";
 import qs from "qs"
 
 
-const API_URL = "http://localhost:5000/api" 
+const API_URL = "https://hotel-be-n0rh.onrender.com/api" 
 export const useHotelStore = create((set,get) => ({
     hotels : [],
     rooms : [],
@@ -13,7 +13,7 @@ export const useHotelStore = create((set,get) => ({
 
     getHotels : async() => {
         try{
-            const res = await axios.get("http://localhost:5000/api/hotel/get-hotels");
+            const res = await axios.get("https://hotel-be-n0rh.onrender.com/api/hotel/get-hotels");
             const data = res.data;
             set({hotels : res.data});
             console.log(data);
@@ -27,7 +27,7 @@ export const useHotelStore = create((set,get) => ({
     try {
       const query = qs.stringify(filters, { arrayFormat: 'comma' });
       const res = await axios.get(
-        `http://localhost:5000/api/room/get-all-rooms?${query}`
+        `https://hotel-be-n0rh.onrender.com/api/room/get-all-rooms?${query}`
       );
       set({ rooms: res.data });
     } catch (error) {
@@ -37,7 +37,7 @@ export const useHotelStore = create((set,get) => ({
 
     getRandom : async() => {
         try {
-            const res = await axios.get("http://localhost:5000/api/hotel/get-random");
+            const res = await axios.get("https://hotel-be-n0rh.onrender.com/api/hotel/get-random");
             set({randomHotels : res.data})
             console.log(res.data);
         } catch (error) {
@@ -48,7 +48,7 @@ export const useHotelStore = create((set,get) => ({
 
     getSingle : async(id) => {
         try {
-            const res = await axios.get(`http://localhost:5000/api/room/get-room-details/${id}`);
+            const res = await axios.get(`https://hotel-be-n0rh.onrender.com/api/room/get-room-details/${id}`);
             set({room : res.data});
             console.log(res.data);
         } catch (error) {
